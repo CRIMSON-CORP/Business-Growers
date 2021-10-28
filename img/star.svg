@@ -1,0 +1,11 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.98 21.85">
+  <defs>
+    <style>
+      .star {
+        fill: #ff6634;
+      }
+    </style>
+  </defs>
+  <polygon class="star"
+    points="11.49 0 14.2 8.35 22.98 8.35 15.88 13.51 18.59 21.85 11.49 16.7 4.39 21.85 7.1 13.51 0 8.35 8.78 8.35 11.49 0" />
+</svg>

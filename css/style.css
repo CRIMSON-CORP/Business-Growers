@@ -9,6 +9,7 @@ body {
 
 body {
   min-height: 100vh;
+  font-family: Montserrat;
 }
 
 button {
@@ -62,6 +63,31 @@ nav li.sign_up_btn {
   border: 1px solid #ff6634;
   border-radius: 4px;
   color: #ff6634;
+}
+
+section {
+  padding: 100px 200px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+section header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+section header h2 {
+  color: #303030;
+  font-weight: 800;
+  font-size: 29px;
+  line-height: 35px;
+  margin-bottom: 20px;
+}
+
+section header p {
+  font-size: 14px;
+  color: #8d8d8d;
+  font-weight: 400;
 }
 
 section#hero {
@@ -173,5 +199,130 @@ section#hero .content .note {
 section#hero .content .note span {
   color: #ff6634;
   cursor: pointer;
+}
+
+section#featured .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#featured .star_icon,
+section#featured .work_icon {
+  width: 11px;
+  height: 11px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+section#featured .star_icon.unfill svg polygon,
+section#featured .work_icon.unfill svg polygon {
+  fill: #ededed;
+}
+
+section#featured .cards {
+  background: #ffffff;
+  border: 1px solid #fbfbfb;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.04);
+          box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  width: 33%;
+}
+
+section#featured .cards .top {
+  padding: 30px;
+  display: -ms-grid;
+  display: grid;
+  gap: 20px;
+}
+
+section#featured .cards .top .star_rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
+}
+
+section#featured .cards .top .comment {
+  font-size: 12px;
+  line-height: 15px;
+  color: #8d8d8d;
+}
+
+section#featured .cards .top .tag {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section#featured .cards .top .tag .label {
+  background: rgba(255, 102, 52, 0.05);
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff6634;
+  padding: 5px 10px;
+  display: inline;
+}
+
+section#featured .cards .top .tag .workplace {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#featured .cards .top .tag .workplace p {
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  color: #000000;
+}
+
+section#featured .cards .bottom {
+  padding: 15px 30px;
+  background: #fcfcfc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+section#featured .cards .bottom span.image_sklt {
+  width: 36px;
+  height: 36px;
+  background: #a1a1a1;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+section#featured .cards .bottom .data {
+  display: -ms-grid;
+  display: grid;
+}
+
+section#featured .cards .bottom .data .name {
+  font-size: 12px;
+  line-height: 15px;
+  color: #6c6c6c;
+}
+
+section#featured .cards .bottom .data .position {
+  font-size: 11px;
+  line-height: 13px;
+  color: #bfbfbf;
 }
 /*# sourceMappingURL=style.css.map */
