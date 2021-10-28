@@ -1,0 +1,103 @@
+*,
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+button {
+    border: none;
+    outline: none;
+    background-color: none;
+    transition: 0.5s ease;
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 100px;
+    list-style: none;
+    gap: 60px;
+    align-items: center;
+    font-family: "Open Sans";
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    li {
+        font-size: 16px;
+        cursor: pointer;
+        &.sign_up_btn {
+            padding: 10px 34px;
+            border: 1px solid #ff6634;
+            border-radius: 4px;
+            color: #ff6634;
+        }
+    }
+}
+
+section#hero {
+    background: #ffebff;
+    height: 100vh;
+    max-height: 735px;
+    display: flex;
+    padding: 0px 200px;
+    align-items: center;
+    font-family: Montserrat;
+    font-style: normal;
+
+    .content {
+        width: 50%;
+        h1 {
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 49px;
+            margin-bottom: 10px;
+            color: #303030;
+        }
+        p {
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #747474;
+            margin-bottom: 30px;
+        }
+        .email_input_feild {
+            width: 100%;
+            background: #ffffff;
+            border-radius: 6px;
+            padding: 8px;
+            display: flex;
+            width: 100%;
+            input {
+                flex: auto;
+            }
+            button {
+                background: #ff6634;
+                border-radius: 4px;
+                padding: 20px 35px;
+                color: white;
+                font-size: 17px;
+                line-height: 21px;
+                color: #ffffff;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
