@@ -85,18 +85,39 @@ section#hero {
             padding: 8px;
             display: flex;
             width: 100%;
+            margin-bottom: 35px;
             input {
                 flex: auto;
+                color: #303030;
+                padding-left: 20px;
+                font-size: 17px;
+                letter-spacing: 1px;
+                &::placeholder {
+                    font-size: 17px;
+                    color: #dedede;
+                    font-family: inherit;
+                    line-height: 21px;
+                    letter-spacing: 1px;
+                }
             }
             button {
                 background: #ff6634;
                 border-radius: 4px;
-                padding: 20px 35px;
+                padding: 20px 36px;
                 color: white;
                 font-size: 17px;
                 line-height: 21px;
                 color: #ffffff;
                 letter-spacing: 1px;
+            }
+        }
+        .note {
+            font-size: 16px;
+            line-height: 20px;
+            color: #747474;
+            span {
+                color: #ff6634;
+                cursor: pointer;
             }
         }
     }

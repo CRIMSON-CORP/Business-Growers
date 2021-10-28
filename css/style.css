@@ -108,22 +108,70 @@ section#hero .content .email_input_feild {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
+  margin-bottom: 35px;
 }
 
 section#hero .content .email_input_feild input {
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
+  color: #303030;
+  padding-left: 20px;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+
+section#hero .content .email_input_feild input::-webkit-input-placeholder {
+  font-size: 17px;
+  color: #dedede;
+  font-family: inherit;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+section#hero .content .email_input_feild input:-ms-input-placeholder {
+  font-size: 17px;
+  color: #dedede;
+  font-family: inherit;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+section#hero .content .email_input_feild input::-ms-input-placeholder {
+  font-size: 17px;
+  color: #dedede;
+  font-family: inherit;
+  line-height: 21px;
+  letter-spacing: 1px;
+}
+
+section#hero .content .email_input_feild input::placeholder {
+  font-size: 17px;
+  color: #dedede;
+  font-family: inherit;
+  line-height: 21px;
+  letter-spacing: 1px;
 }
 
 section#hero .content .email_input_feild button {
   background: #ff6634;
   border-radius: 4px;
-  padding: 20px 35px;
+  padding: 20px 36px;
   color: white;
   font-size: 17px;
   line-height: 21px;
   color: #ffffff;
   letter-spacing: 1px;
+}
+
+section#hero .content .note {
+  font-size: 16px;
+  line-height: 20px;
+  color: #747474;
+}
+
+section#hero .content .note span {
+  color: #ff6634;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
