@@ -167,10 +167,10 @@ section#featured {
         }
     }
     .cards {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 300px);
+        justify-content: center;
         gap: 30px;
-        justify-content: space-around;
-        flex-wrap: wrap;
         .card {
             max-width: 300px;
             min-width: 220px;
@@ -274,6 +274,7 @@ section#newsletter {
     padding: 100px 200px;
     background: #f8f8f8;
     .container {
+        display: flex;
         justify-content: space-between;
     }
     .content {
@@ -285,7 +286,6 @@ section#newsletter {
             margin-bottom: 10px;
             color: #303030;
         }
-        display: flex;
     }
     p {
         font-size: 14px;
@@ -312,15 +312,14 @@ section#newsletter {
 }
 
 section#partners {
-    padding: 40px 150px;
+    padding: 40px 100px;
     background: #fefefe;
+    border-bottom: 1px solid #f4f4f4;
     .container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 50px;
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, 170px);
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         img {
             width: 100%;
         }
