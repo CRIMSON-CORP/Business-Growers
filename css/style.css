@@ -754,8 +754,8 @@ section#partners .container img {
 section#advert .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 50px;
 }
 
@@ -771,6 +771,12 @@ section#advert .ad {
   background: #fbfbfb;
   border: 1px solid #d6d6d6;
   border-radius: 4px;
+}
+
+@media only screen and (max-width: 900px) {
+  section#advert .container {
+    gap: 20px;
+  }
 }
 
 section#signup {
@@ -835,6 +841,9 @@ section#signup .container .wrapper .cta {
 }
 
 @media only screen and (max-width: 900px) {
+  section#signup {
+    padding: 30px 0;
+  }
   section#signup .container .wrapper {
     padding: 40px;
     -webkit-box-orient: vertical;
