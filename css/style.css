@@ -801,6 +801,8 @@ section#signup .container .wrapper h3 {
   line-height: 30px;
   color: #303030;
   width: 50%;
+  position: relative;
+  z-index: 3;
 }
 
 section#signup .container .wrapper button {
@@ -830,6 +832,23 @@ section#signup .container .wrapper .shapes img {
 section#signup .container .wrapper .cta {
   position: relative;
   z-index: 2;
+}
+
+@media only screen and (max-width: 900px) {
+  section#signup .container .wrapper {
+    padding: 40px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  section#signup .container .wrapper h3 {
+    width: 100%;
+  }
+  section#signup .container .wrapper .shapes {
+    width: 100%;
+  }
 }
 
 footer {

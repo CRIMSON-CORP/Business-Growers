@@ -577,6 +577,8 @@ section#signup {
                 line-height: 30px;
                 color: #303030;
                 width: 50%;
+                position: relative;
+                z-index: 3;
             }
             button {
                 flex: 1;
@@ -599,6 +601,23 @@ section#signup {
             .cta {
                 position: relative;
                 z-index: 2;
+            }
+        }
+    }
+    @media only screen and (max-width: 900px) {
+        & {
+            .container {
+                .wrapper {
+                    padding: 40px;
+                    flex-direction: column;
+                    text-align: center;
+                    h3 {
+                        width: 100%;
+                    }
+                    .shapes {
+                        width: 100%;
+                    }
+                }
             }
         }
     }
