@@ -52,6 +52,18 @@ nav {
   z-index: 10;
 }
 
+nav .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -64,6 +76,7 @@ nav ul {
           align-items: center;
   list-style: none;
   gap: 60px;
+  z-index: 8;
 }
 
 nav li {
@@ -78,6 +91,50 @@ nav li.sign_up_btn {
   border: 1px solid #ff6634;
   border-radius: 4px;
   color: #ff6634;
+}
+
+nav span.fas {
+  justify-self: flex-end;
+  font-size: 24px;
+  z-index: 10;
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    padding: 30px;
+  }
+  nav .container {
+    margin: 0 auto;
+  }
+  nav span.fas {
+    display: inline-block;
+  }
+  nav ul {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    background: white;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: 0.3s ease-out;
+    transition: 0.3s ease-out;
+  }
+  nav ul.open {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 .container {
@@ -259,6 +316,7 @@ section#hero .image_box .img_wrapper {
   display: flex;
   width: 120%;
   min-width: 700px;
+  overflow: hidden;
 }
 
 section#hero .image_box .img_wrapper img.hero_img {
@@ -363,6 +421,7 @@ section#hero .image_box .img_wrapper .hero_comment .stars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 3px;
 }
 
 section#hero .image_box .img_wrapper .hero_comment .star_icon,
@@ -374,8 +433,8 @@ section#hero .image_box .img_wrapper .hero_comment .work_icon {
   place-items: center;
 }
 
-section#hero .image_box .img_wrapper .hero_comment .star_icon.unfill svg polygon,
-section#hero .image_box .img_wrapper .hero_comment .work_icon.unfill svg polygon {
+section#hero .image_box .img_wrapper .hero_comment .star_icon.unfill svg path,
+section#hero .image_box .img_wrapper .hero_comment .work_icon.unfill svg path {
   fill: #ededed;
 }
 
@@ -468,25 +527,29 @@ section#hero .quote {
   position: absolute;
   left: -50px;
   bottom: 50px;
-  width: 344px;
+  width: calc(344px + 80px);
+  min-height: 100px;
+  overflow: hidden;
 }
 
 section#hero .quote p {
   font-size: 14px;
   line-height: 17px;
   color: #8d8d8d;
+  position: absolute;
+  padding: 30px 40px;
 }
 
 section#hero .quote .first_quote {
   position: absolute;
-  top: -3px;
-  left: -35px;
+  top: 20px;
+  left: 0px;
 }
 
 section#hero .quote .last_quote {
   position: absolute;
   bottom: -5px;
-  right: 0px;
+  right: 40px;
 }
 
 @media only screen and (max-width: 1140px) {
@@ -534,7 +597,6 @@ section#hero .quote .last_quote {
     bottom: unset;
     top: 40%;
     left: 20px;
-    width: auto;
     max-width: 340px;
   }
 }
@@ -552,6 +614,9 @@ section#hero .quote .last_quote {
   }
   section#hero .container .content .email_input_feild button {
     padding: 0.6em 1em;
+  }
+  section#hero .container .image_box .img_wrapper {
+    overflow: visible;
   }
   section#hero .container .image_box .img_wrapper img.hero_img {
     -webkit-transform: translateX(-55%) scale(1.6);
@@ -577,6 +642,7 @@ section#featured .stars {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 3px;
 }
 
 section#featured .star_icon,
@@ -588,8 +654,8 @@ section#featured .work_icon {
   place-items: center;
 }
 
-section#featured .star_icon.unfill svg polygon,
-section#featured .work_icon.unfill svg polygon {
+section#featured .star_icon.unfill svg path,
+section#featured .work_icon.unfill svg path {
   fill: #ededed;
 }
 
@@ -628,7 +694,7 @@ section#featured .cards .top .star_rating {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   font-weight: bold;
   font-size: 11px;
   line-height: 13px;

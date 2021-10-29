@@ -45,12 +45,18 @@ nav {
     top: 0;
     left: 0;
     z-index: 10;
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
     ul {
         display: flex;
         justify-content: flex-end;
         align-items: center;
         list-style: none;
         gap: 60px;
+        z-index: 8;
     }
     li {
         font-size: 15px;
@@ -63,6 +69,38 @@ nav {
             border: 1px solid #ff6634;
             border-radius: 4px;
             color: #ff6634;
+        }
+    }
+    span.fas {
+        justify-self: flex-end;
+        font-size: 24px;
+        z-index: 10;
+        display: none;
+    }
+    @media only screen and (max-width: 900px) {
+        & {
+            padding: 30px;
+            .container {
+                margin: 0 auto;
+            }
+            span.fas {
+                display: inline-block;
+            }
+            ul {
+                position: fixed;
+                inset: 0;
+                height: 100%;
+                background: white;
+                flex-direction: column;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: 0.3s ease-out;
+                &.open {
+                    transform: translateX(0);
+                }
+            }
         }
     }
 }
@@ -185,6 +223,7 @@ section#hero {
             display: flex;
             width: 120%;
             min-width: 700px;
+            overflow: hidden;
 
             img.hero_img {
                 position: absolute;
@@ -259,6 +298,7 @@ section#hero {
                 gap: 10px;
                 .stars {
                     display: flex;
+                    gap: 3px;
                 }
                 .star_icon,
                 .work_icon {
@@ -267,7 +307,7 @@ section#hero {
                     display: grid;
                     place-items: center;
                     &.unfill {
-                        svg polygon {
+                        svg path {
                             fill: #ededed;
                         }
                     }
@@ -344,21 +384,25 @@ section#hero {
         position: absolute;
         left: -50px;
         bottom: 50px;
-        width: 344px;
+        width: calc(344px + 80px);
+        min-height: 100px;
+        overflow: hidden;
         p {
             font-size: 14px;
             line-height: 17px;
             color: #8d8d8d;
+            position: absolute;
+            padding: 30px 40px;
         }
         .first_quote {
             position: absolute;
-            top: -3px;
-            left: -35px;
+            top: 20px;
+            left: 0px;
         }
         .last_quote {
             position: absolute;
             bottom: -5px;
-            right: 0px;
+            right: 40px;
         }
     }
 
@@ -405,7 +449,6 @@ section#hero {
                 bottom: unset;
                 top: 40%;
                 left: 20px;
-                width: auto;
                 max-width: 340px;
             }
         }
@@ -426,6 +469,7 @@ section#hero {
                 }
                 .image_box {
                     .img_wrapper {
+                        overflow: visible;
                         img.hero_img {
                             transform: translateX(-55%) scale(1.6);
                             transform-origin: bottom;
@@ -449,6 +493,7 @@ section#featured {
     padding: 100px 200px;
     .stars {
         display: flex;
+        gap: 3px;
     }
     .star_icon,
     .work_icon {
@@ -457,7 +502,7 @@ section#featured {
         display: grid;
         place-items: center;
         &.unfill {
-            svg polygon {
+            svg path {
                 fill: #ededed;
             }
         }
@@ -482,7 +527,7 @@ section#featured {
             gap: 20px;
             .star_rating {
                 display: flex;
-                gap: 5px;
+                gap: 10px;
                 font-weight: bold;
                 font-size: 11px;
                 line-height: 13px;
