@@ -116,7 +116,7 @@ section header p {
 
 section#hero {
   background: #ffebff;
-  min-height: 100vh;
+  height: 100vh;
   max-height: 735px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -127,20 +127,19 @@ section#hero {
           align-items: center;
   font-family: Montserrat;
   font-style: normal;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 section#hero .container {
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   height: 100%;
   gap: 30px;
   width: 100%;
   position: relative;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 section#hero .content {
@@ -188,6 +187,7 @@ section#hero .content .email_input_feild input {
   padding-left: 20px;
   font-size: 17px;
   letter-spacing: 1px;
+  width: 100%;
 }
 
 section#hero .content .email_input_feild input::-webkit-input-placeholder {
@@ -235,6 +235,7 @@ section#hero .content .note span {
 
 section#hero .image_box {
   height: 100%;
+  height: 40vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -257,6 +258,7 @@ section#hero .image_box .img_wrapper {
   display: -ms-flexbox;
   display: flex;
   width: 120%;
+  min-width: 700px;
 }
 
 section#hero .image_box .img_wrapper img.hero_img {
@@ -314,8 +316,8 @@ section#hero .image_box .img_wrapper .review_count {
   position: absolute;
   width: 86px;
   height: 84px;
-  right: 120px;
-  top: 250px;
+  right: 15%;
+  top: 20%;
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 11px 5px rgba(239, 239, 239, 0.25);
           box-shadow: 0px 4px 11px 5px rgba(239, 239, 239, 0.25);
@@ -347,8 +349,8 @@ section#hero .image_box .img_wrapper .hero_comment {
   -webkit-box-shadow: 0px 4px 11px 5px rgba(239, 239, 239, 0.25);
           box-shadow: 0px 4px 11px 5px rgba(239, 239, 239, 0.25);
   border-radius: 4px;
-  bottom: 60px;
-  left: 50px;
+  bottom: 10%;
+  left: 5%;
   padding: 20px;
   z-index: 5;
   width: 263px;
@@ -423,10 +425,10 @@ section#hero .image_box .img_wrapper .hero_comment .bottom .data .position {
 
 section#hero .image_box .img_wrapper .percent {
   position: absolute;
-  left: 230px;
+  left: 28%;
   width: 58px;
   height: 58px;
-  top: 250px;
+  top: 15%;
   background: #ffffff;
   -webkit-box-shadow: 0px 4px 11px 5px rgba(239, 239, 239, 0.25);
           box-shadow: 0px 4px 11px 5px rgba(239, 239, 239, 0.25);
@@ -485,6 +487,86 @@ section#hero .quote .last_quote {
   position: absolute;
   bottom: -5px;
   right: 0px;
+}
+
+@media only screen and (max-width: 1140px) {
+  section#hero {
+    height: auto;
+    max-height: none;
+    padding-top: 100px;
+  }
+  section#hero .container {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+  }
+  section#hero .container .image_box {
+    min-height: 500px;
+  }
+  section#hero .container .image_box .img_wrapper {
+    min-width: auto;
+  }
+  section#hero .container .image_box .img_wrapper img.hero_img {
+    max-width: 600px;
+    min-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  section#hero {
+    padding: 30px 20px 0px;
+  }
+  section#hero .container {
+    margin-top: 100px;
+  }
+  section#hero .container .content .email_input_feild {
+    width: 100%;
+  }
+  section#hero .container .image_box {
+    margin-top: 100px;
+  }
+  section#hero .container .image_box .img_wrapper {
+    left: 0;
+    width: 100%;
+  }
+  section#hero .quote {
+    bottom: unset;
+    top: 40%;
+    left: 20px;
+    width: auto;
+    max-width: 340px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  section#hero {
+    padding: 30px 20px 0px;
+  }
+  section#hero .container {
+    margin-top: 100px;
+  }
+  section#hero .container .content .email_input_feild {
+    width: 100%;
+    padding: 5px;
+  }
+  section#hero .container .content .email_input_feild button {
+    padding: 0.6em 1em;
+  }
+  section#hero .container .image_box .img_wrapper img.hero_img {
+    -webkit-transform: translateX(-55%) scale(1.6);
+            transform: translateX(-55%) scale(1.6);
+    -webkit-transform-origin: bottom;
+            transform-origin: bottom;
+  }
+  section#hero .container .image_box .img_wrapper .percent {
+    left: 8%;
+    top: 25%;
+  }
+  section#hero .container .image_box .img_wrapper .review_count {
+    right: 3%;
+    top: 20%;
+  }
 }
 
 section#featured {
@@ -655,6 +737,12 @@ section#featured .pagination span.active {
   background: #8a8a8a;
 }
 
+@media only screen and (max-width: 900px) {
+  section#featured {
+    padding: 30px 20px;
+  }
+}
+
 section#newsletter {
   padding: 100px 200px;
   background: #f8f8f8;
@@ -726,6 +814,31 @@ section#newsletter .input_feid input::placeholder {
   font-size: 15px;
   line-height: 18px;
   color: #dedede;
+}
+
+@media only screen and (max-width: 900px) {
+  section#newsletter {
+    padding: 30px 20px;
+  }
+  section#newsletter .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+  section#newsletter .container .input_feid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 section#partners {
@@ -842,7 +955,7 @@ section#signup .container .wrapper .cta {
 
 @media only screen and (max-width: 900px) {
   section#signup {
-    padding: 30px 0;
+    padding: 30px 20px;
   }
   section#signup .container .wrapper {
     padding: 40px;
@@ -851,6 +964,7 @@ section#signup .container .wrapper .cta {
         -ms-flex-direction: column;
             flex-direction: column;
     text-align: center;
+    margin: 0;
   }
   section#signup .container .wrapper h3 {
     width: 100%;
@@ -948,7 +1062,7 @@ footer .copy {
 
 @media only screen and (max-width: 900px) {
   footer {
-    padding: 30px;
+    padding: 30px 20px;
   }
   footer .container .wrapper .social p {
     padding: 0px 100px 30px 0;
