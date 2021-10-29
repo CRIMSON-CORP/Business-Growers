@@ -9,6 +9,7 @@ body {
 body {
     min-height: 100vh;
     font-family: Montserrat;
+    overflow-x: hidden;
 }
 
 button {
@@ -37,7 +38,6 @@ input {
 
 nav {
     padding: 20px 100px;
-    font-family: "Open Sans";
     width: 100%;
     margin: 0 auto;
     background: white;
@@ -53,7 +53,10 @@ nav {
         gap: 60px;
     }
     li {
-        font-size: 16px;
+        font-size: 15px;
+        line-height: 18px;
+
+        color: #555555;
         cursor: pointer;
         &.sign_up_btn {
             padding: 10px 34px;
@@ -86,22 +89,31 @@ section {
             font-weight: 400;
         }
     }
+
+    @media only screen and (max-width: 900px) {
+        & {
+            padding: 20px;
+        }
+    }
 }
 section#hero {
     background: #ffebff;
-    height: 100vh;
+    min-height: 100vh;
     max-height: 735px;
     display: flex;
     padding: 0px 0px 0px 150px;
     align-items: center;
     font-family: Montserrat;
     font-style: normal;
+    overflow-x: hidden;
     .container {
-        margin: 0;
+        margin: 0 auto;
         display: flex;
         height: 100%;
         gap: 30px;
         width: 100%;
+        position: relative;
+        flex-wrap: wrap;
     }
     .content {
         align-self: center;
@@ -180,6 +192,7 @@ section#hero {
                 width: 100%;
                 height: auto;
                 z-index: 5;
+                max-width: 850px;
             }
             div.lines {
                 position: absolute;
@@ -196,8 +209,8 @@ section#hero {
 
                     @for $var from 1 to 5 {
                         &:nth-child(#{$var}) {
-                            width: calc(162px * #{$var * 1.2});
-                            height: calc(162px * #{$var * 1.2});
+                            width: calc(162px * #{$var});
+                            height: calc(162px * #{$var});
                         }
                     }
                 }
@@ -324,6 +337,27 @@ section#hero {
             }
         }
     }
+    .quote {
+        position: absolute;
+        left: -50px;
+        bottom: 50px;
+        width: 344px;
+        p {
+            font-size: 14px;
+            line-height: 17px;
+            color: #8d8d8d;
+        }
+        .first_quote {
+            position: absolute;
+            top: -3px;
+            left: -35px;
+        }
+        .last_quote {
+            position: absolute;
+            bottom: -5px;
+            right: 0px;
+        }
+    }
 }
 
 section#featured {
@@ -344,10 +378,10 @@ section#featured {
         }
     }
     .cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+        display: flex;
         justify-content: center;
         gap: 50px;
+        flex-wrap: wrap;
         .card {
             max-width: 300px;
             min-width: 200px;
@@ -469,6 +503,7 @@ section#newsletter {
         line-height: 21px;
         color: #8d8d8d;
         margin-bottom: 30px;
+        max-width: 557px;
     }
     .input_feid {
         display: flex;
@@ -577,10 +612,11 @@ footer {
     .container {
         .wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
             .social {
-                padding: 50px 230px 30px 0;
                 p {
+                    padding: 50px 230px 30px 0;
                     font-size: 15px;
                     line-height: 145.8%;
                     color: #ffffff;
@@ -605,7 +641,8 @@ footer {
             }
             .links {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 30px;
                 .tabs {
                     display: flex;
                     flex-direction: column;
@@ -632,5 +669,22 @@ footer {
         line-height: 145.8%;
         color: #ffffff;
         opacity: 0.4;
+    }
+
+    @media only screen and (max-width: 900px) {
+        & {
+            padding: 30px;
+            .container {
+                .wrapper {
+                    .social p {
+                        padding: 0px 100px 30px 0;
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .copy {
+                padding-bottom: 20px;
+            }
+        }
     }
 }

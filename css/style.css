@@ -10,6 +10,7 @@ body {
 body {
   min-height: 100vh;
   font-family: Montserrat;
+  overflow-x: hidden;
 }
 
 button {
@@ -42,7 +43,6 @@ input {
 
 nav {
   padding: 20px 100px;
-  font-family: "Open Sans";
   width: 100%;
   margin: 0 auto;
   background: white;
@@ -67,7 +67,9 @@ nav ul {
 }
 
 nav li {
-  font-size: 16px;
+  font-size: 15px;
+  line-height: 18px;
+  color: #555555;
   cursor: pointer;
 }
 
@@ -106,9 +108,15 @@ section header p {
   font-weight: 400;
 }
 
+@media only screen and (max-width: 900px) {
+  section {
+    padding: 20px;
+  }
+}
+
 section#hero {
   background: #ffebff;
-  height: 100vh;
+  min-height: 100vh;
   max-height: 735px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -119,16 +127,20 @@ section#hero {
           align-items: center;
   font-family: Montserrat;
   font-style: normal;
+  overflow-x: hidden;
 }
 
 section#hero .container {
-  margin: 0;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100%;
   gap: 30px;
   width: 100%;
+  position: relative;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 section#hero .content {
@@ -258,6 +270,7 @@ section#hero .image_box .img_wrapper img.hero_img {
   width: 100%;
   height: auto;
   z-index: 5;
+  max-width: 850px;
 }
 
 section#hero .image_box .img_wrapper div.lines {
@@ -278,23 +291,23 @@ section#hero .image_box .img_wrapper div.lines .line {
 }
 
 section#hero .image_box .img_wrapper div.lines .line:nth-child(1) {
-  width: calc(162px * 1.2);
-  height: calc(162px * 1.2);
+  width: calc(162px * 1);
+  height: calc(162px * 1);
 }
 
 section#hero .image_box .img_wrapper div.lines .line:nth-child(2) {
-  width: calc(162px * 2.4);
-  height: calc(162px * 2.4);
+  width: calc(162px * 2);
+  height: calc(162px * 2);
 }
 
 section#hero .image_box .img_wrapper div.lines .line:nth-child(3) {
-  width: calc(162px * 3.6);
-  height: calc(162px * 3.6);
+  width: calc(162px * 3);
+  height: calc(162px * 3);
 }
 
 section#hero .image_box .img_wrapper div.lines .line:nth-child(4) {
-  width: calc(162px * 4.8);
-  height: calc(162px * 4.8);
+  width: calc(162px * 4);
+  height: calc(162px * 4);
 }
 
 section#hero .image_box .img_wrapper .review_count {
@@ -449,6 +462,31 @@ section#hero .image_box .img_wrapper .percent .circle span {
   place-items: center;
 }
 
+section#hero .quote {
+  position: absolute;
+  left: -50px;
+  bottom: 50px;
+  width: 344px;
+}
+
+section#hero .quote p {
+  font-size: 14px;
+  line-height: 17px;
+  color: #8d8d8d;
+}
+
+section#hero .quote .first_quote {
+  position: absolute;
+  top: -3px;
+  left: -35px;
+}
+
+section#hero .quote .last_quote {
+  position: absolute;
+  bottom: -5px;
+  right: 0px;
+}
+
 section#featured {
   padding: 100px 200px;
 }
@@ -474,14 +512,15 @@ section#featured .work_icon.unfill svg polygon {
 }
 
 section#featured .cards {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (minmax(200px, 300px))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   gap: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 section#featured .cards .card {
@@ -647,6 +686,7 @@ section#newsletter p {
   line-height: 21px;
   color: #8d8d8d;
   margin-bottom: 30px;
+  max-width: 557px;
 }
 
 section#newsletter .input_feid {
@@ -802,15 +842,13 @@ footer {
 footer .container .wrapper {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-footer .container .wrapper .social {
-  padding: 50px 230px 30px 0;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
 }
 
 footer .container .wrapper .social p {
+  padding: 50px 230px 30px 0;
   font-size: 15px;
   line-height: 145.8%;
   color: #ffffff;
@@ -843,8 +881,9 @@ footer .container .wrapper .social .social_links .link {
 footer .container .wrapper .links {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
 }
 
 footer .container .wrapper .links .tabs {
@@ -877,5 +916,18 @@ footer .copy {
   line-height: 145.8%;
   color: #ffffff;
   opacity: 0.4;
+}
+
+@media only screen and (max-width: 900px) {
+  footer {
+    padding: 30px;
+  }
+  footer .container .wrapper .social p {
+    padding: 0px 100px 30px 0;
+    margin-bottom: 20px;
+  }
+  footer .copy {
+    padding-bottom: 20px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
