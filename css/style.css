@@ -18,11 +18,21 @@ button {
   background-color: none;
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
+  cursor: pointer;
 }
 
 button:active {
   -webkit-transform: scale(0.95);
           transform: scale(0.95);
+}
+
+button.pry {
+  padding: 1em 2.4em;
+  background: #ff6634;
+  border-radius: 4px;
+  font-size: 17px;
+  line-height: 21px;
+  color: white;
 }
 
 input {
@@ -41,7 +51,7 @@ nav {
   left: 0;
 }
 
-nav .container {
+nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,12 +61,6 @@ nav .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-nav ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   list-style: none;
   gap: 60px;
 }
@@ -79,7 +83,7 @@ nav li.sign_up_btn {
 }
 
 section {
-  padding: 100px 200px;
+  padding: 100px;
 }
 
 section header {
@@ -108,7 +112,7 @@ section#hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0px 200px;
+  padding: 0px 150px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -116,8 +120,12 @@ section#hero {
   font-style: normal;
 }
 
+section#hero .container {
+  margin: 0;
+}
+
 section#hero .content {
-  width: 50%;
+  width: 60%;
 }
 
 section#hero .content h1 {
@@ -190,17 +198,6 @@ section#hero .content .email_input_feild input::placeholder {
   letter-spacing: 1px;
 }
 
-section#hero .content .email_input_feild button {
-  background: #ff6634;
-  border-radius: 4px;
-  padding: 20px 36px;
-  color: white;
-  font-size: 17px;
-  line-height: 21px;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
-
 section#hero .content .note {
   font-size: 16px;
   line-height: 20px;
@@ -210,6 +207,10 @@ section#hero .content .note {
 section#hero .content .note span {
   color: #ff6634;
   cursor: pointer;
+}
+
+section#featured {
+  padding: 100px 200px;
 }
 
 section#featured .stars {
@@ -360,7 +361,7 @@ section#featured .pagination {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
-  margin: 50px auto;
+  margin: 80px auto 0;
 }
 
 section#featured .pagination span {
@@ -376,11 +377,21 @@ section#featured .pagination span.active {
 }
 
 section#newsletter {
+  padding: 100px 200px;
   background: #f8f8f8;
+}
+
+section#newsletter .container {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 section#newsletter .content {
   width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 section#newsletter .content h2 {
@@ -437,29 +448,171 @@ section#newsletter .input_feid input::placeholder {
   color: #dedede;
 }
 
-section#newsletter .input_feid button {
-  padding: 16px 40px;
-  background: #ff6634;
-  border-radius: 4px;
-  font-size: 17px;
-  line-height: 21px;
-  color: white;
+section#partners {
+  padding: 40px 150px;
+  background: #fefefe;
 }
 
-section#partners {
+section#partners .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 50px;
+  gap: 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section#partners .container img {
+  width: 100%;
+}
+
+section#advert .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px;
+}
+
+section#advert .ad {
+  aspect-ratio: 1/1;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  color: #c2c2c2;
+  background: #fbfbfb;
+  border: 1px solid #d6d6d6;
+  border-radius: 4px;
+}
+
+section#signup {
+  padding-top: 50px;
+}
+
+section#signup .container .wrapper {
+  margin: 0 60px;
+  background: #ffebff;
+  border: 1px solid #ffebff;
+  border-radius: 8px;
+  padding: 70px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 50px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  background: #fefefe;
-  padding-top: 50px;
-  padding-bottom: 50px;
 }
 
-section#partners img {
-  width: 170px;
-  height: auto;
+section#signup .container .wrapper h3 {
+  font-size: 25px;
+  line-height: 30px;
+  color: #303030;
+  width: 50%;
+}
+
+section#signup .container .wrapper button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+footer {
+  background: #1f2131;
+  color: white;
+  padding: 100px;
+  padding-bottom: 0;
+}
+
+footer .container .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+footer .container .wrapper .social {
+  padding: 50px 230px 30px 0;
+}
+
+footer .container .wrapper .social p {
+  font-size: 15px;
+  line-height: 145.8%;
+  color: #ffffff;
+  opacity: 0.6;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+footer .container .wrapper .social .social_links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer .container .wrapper .social .social_links .link {
+  border-radius: 50%;
+  border: 1px solid #393c4d;
+  width: 48px;
+  height: 48px;
+  color: white;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+footer .container .wrapper .links {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+footer .container .wrapper .links .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+footer .container .wrapper .links .tabs .tab_header {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  margin-bottom: 12px;
+}
+
+footer .container .wrapper .links .tabs .tab {
+  font-size: 13px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+footer .copy {
+  padding: 50px 0;
+  font-size: 13px;
+  line-height: 145.8%;
+  color: #ffffff;
+  opacity: 0.4;
 }
 /*# sourceMappingURL=style.css.map */

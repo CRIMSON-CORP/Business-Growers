@@ -16,8 +16,17 @@ button {
     outline: none;
     background-color: none;
     transition: 0.5s ease;
+    cursor: pointer;
     &:active {
         transform: scale(0.95);
+    }
+    &.pry {
+        padding: 1em 2.4em;
+        background: #ff6634;
+        border-radius: 4px;
+        font-size: 17px;
+        line-height: 21px;
+        color: white;
     }
 }
 
@@ -35,13 +44,10 @@ nav {
     position: fixed;
     top: 0;
     left: 0;
-    .container {
+    ul {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-    }
-    ul {
-        display: flex;
         list-style: none;
         gap: 60px;
     }
@@ -62,7 +68,7 @@ nav {
     margin: auto;
 }
 section {
-    padding: 100px 200px;
+    padding: 100px;
     header {
         text-align: center;
         margin-bottom: 70px;
@@ -85,13 +91,15 @@ section#hero {
     height: 100vh;
     max-height: 735px;
     display: flex;
-    padding: 0px 200px;
+    padding: 0px 150px;
     align-items: center;
     font-family: Montserrat;
     font-style: normal;
-
+    .container {
+        margin: 0;
+    }
     .content {
-        width: 50%;
+        width: 60%;
         h1 {
             font-weight: 900;
             font-size: 40px;
@@ -128,16 +136,6 @@ section#hero {
                     letter-spacing: 1px;
                 }
             }
-            button {
-                background: #ff6634;
-                border-radius: 4px;
-                padding: 20px 36px;
-                color: white;
-                font-size: 17px;
-                line-height: 21px;
-                color: #ffffff;
-                letter-spacing: 1px;
-            }
         }
         .note {
             font-size: 16px;
@@ -152,6 +150,7 @@ section#hero {
 }
 
 section#featured {
+    padding: 100px 200px;
     .stars {
         display: flex;
     }
@@ -257,7 +256,7 @@ section#featured {
         justify-content: center;
         align-items: center;
         gap: 10px;
-        margin: 50px auto;
+        margin: 80px auto 0;
         span {
             display: inline-block;
             width: 13px;
@@ -272,7 +271,11 @@ section#featured {
 }
 
 section#newsletter {
+    padding: 100px 200px;
     background: #f8f8f8;
+    .container {
+        justify-content: space-between;
+    }
     .content {
         width: 60%;
         h2 {
@@ -282,6 +285,7 @@ section#newsletter {
             margin-bottom: 10px;
             color: #303030;
         }
+        display: flex;
     }
     p {
         font-size: 14px;
@@ -304,26 +308,133 @@ section#newsletter {
                 color: #dedede;
             }
         }
-        button {
-            padding: 16px 40px;
-            background: #ff6634;
-            border-radius: 4px;
-            font-size: 17px;
-            line-height: 21px;
-            color: white;
-        }
     }
 }
 
 section#partners {
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
+    padding: 40px 150px;
     background: #fefefe;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 50px;
+        gap: 30px;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+section#advert {
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 50px;
+    }
+    .ad {
+        aspect-ratio: 1/1;
+        display: grid;
+        place-items: center;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #c2c2c2;
+        background: #fbfbfb;
+        border: 1px solid #d6d6d6;
+        border-radius: 4px;
+    }
+}
+
+section#signup {
     padding-top: 50px;
-    padding-bottom: 50px;
-    img {
-        width: 170px;
-        height: auto;
+    .container {
+        .wrapper {
+            margin: 0 60px;
+            background: #ffebff;
+            border: 1px solid #ffebff;
+            border-radius: 8px;
+            padding: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+            h3 {
+                font-size: 25px;
+                line-height: 30px;
+                color: #303030;
+                width: 50%;
+            }
+            button {
+                flex: 1;
+            }
+        }
+    }
+}
+
+footer {
+    background: #1f2131;
+    color: white;
+    padding: 100px;
+    padding-bottom: 0;
+    .container {
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            .social {
+                padding: 50px 230px 30px 0;
+                p {
+                    font-size: 15px;
+                    line-height: 145.8%;
+                    color: #ffffff;
+                    opacity: 0.6;
+                    margin-bottom: 50px;
+                    font-weight: 400;
+                }
+                .social_links {
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+                    .link {
+                        border-radius: 50%;
+                        border: 1px solid #393c4d;
+                        width: 48px;
+                        height: 48px;
+                        color: white;
+                        display: grid;
+                        place-items: center;
+                    }
+                }
+            }
+            .links {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                .tabs {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    .tab_header {
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 19px;
+                        margin-bottom: 12px;
+                    }
+                    .tab {
+                        font-size: 13px;
+                        line-height: 22px;
+                        color: rgba(255, 255, 255, 0.6);
+                    }
+                }
+            }
+        }
+    }
+
+    .copy {
+        padding: 50px 0;
+        font-size: 13px;
+        line-height: 145.8%;
+        color: #ffffff;
+        opacity: 0.4;
     }
 }
