@@ -245,4 +245,22 @@ section#featured {
             }
         }
     }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 50px auto;
+        span {
+            display: inline-block;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            border: 2px solid #e9e9e9;
+            &.active {
+                background: #8a8a8a;
+            }
+        }
+    }
 }

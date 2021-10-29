@@ -337,4 +337,30 @@ section#featured .cards .bottom .data .position {
   line-height: 13px;
   color: #bfbfbf;
 }
+
+section#featured .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  margin: 50px auto;
+}
+
+section#featured .pagination span {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: 2px solid #e9e9e9;
+}
+
+section#featured .pagination span.active {
+  background: #8a8a8a;
+}
 /*# sourceMappingURL=style.css.map */
