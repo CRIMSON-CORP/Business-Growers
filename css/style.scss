@@ -27,20 +27,24 @@ input {
 }
 
 nav {
-    display: flex;
-    justify-content: flex-end;
     padding: 20px 100px;
-    list-style: none;
-    gap: 60px;
-    align-items: center;
     font-family: "Open Sans";
     width: 100%;
-    max-width: 1440px;
     margin: 0 auto;
     background: white;
     position: fixed;
     top: 0;
     left: 0;
+    .container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    ul {
+        display: flex;
+        list-style: none;
+        gap: 60px;
+    }
     li {
         font-size: 16px;
         cursor: pointer;
@@ -53,10 +57,12 @@ nav {
     }
 }
 
-section {
-    padding: 100px 200px;
+.container {
     max-width: 1440px;
     margin: auto;
+}
+section {
+    padding: 100px 200px;
     header {
         text-align: center;
         margin-bottom: 70px;
@@ -263,4 +269,8 @@ section#featured {
             }
         }
     }
+}
+
+section#newsletter {
+    background: #f8f8f8;
 }

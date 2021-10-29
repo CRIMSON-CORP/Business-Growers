@@ -31,26 +31,34 @@ input {
 }
 
 nav {
+  padding: 20px 100px;
+  font-family: "Open Sans";
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+nav .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 20px 100px;
-  list-style: none;
-  gap: 60px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Open Sans";
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  background: white;
-  position: fixed;
-  top: 0;
-  left: 0;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  gap: 60px;
 }
 
 nav li {
@@ -65,10 +73,13 @@ nav li.sign_up_btn {
   color: #ff6634;
 }
 
-section {
-  padding: 100px 200px;
+.container {
   max-width: 1440px;
   margin: auto;
+}
+
+section {
+  padding: 100px 200px;
 }
 
 section header {
@@ -362,5 +373,9 @@ section#featured .pagination span {
 
 section#featured .pagination span.active {
   background: #8a8a8a;
+}
+
+section#newsletter {
+  background: #f8f8f8;
 }
 /*# sourceMappingURL=style.css.map */
