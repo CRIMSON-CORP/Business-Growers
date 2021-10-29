@@ -1,10 +1,8 @@
 const stars = document.querySelectorAll(".star_icon");
 const works = document.querySelectorAll(".work_icon");
 const email = document.querySelector(".email_icon");
-const ebay = document.querySelector(".ebay");
-const linkedin = document.querySelector(".linkedin");
-const godaddy = document.querySelector(".godaddy");
-const indeed = document.querySelector(".indeed");
+const ham = document.querySelector("span.fas.fa-bars");
+const nav = document.querySelector("nav ul");
 const fetch_star = fetch("/img/star.svg").then((res) => res.text());
 const fetch_work = fetch("/img/work.svg").then((res) => res.text());
 const fetch_email = fetch("/img/email.svg").then((res) => res.text());
@@ -18,3 +16,10 @@ works.forEach(async (work) => {
 (async function () {
     email.innerHTML = await fetch_email;
 })();
+
+ham.addEventListener("click", () => {
+    nav.classList.toggle("open");
+    ham.classList.contains("fa-bars")
+        ? ham.classList.replace("fa-bars", "fa-times")
+        : ham.classList.replace("fa-times", "fa-bars");
+});
